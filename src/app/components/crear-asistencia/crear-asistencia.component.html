@@ -1,0 +1,46 @@
+<div class="bg-light">
+    <app-menubar></app-menubar>
+    <main>
+        <section class="jumbotron text-center my-2">
+            <div class="container">
+                <h3 class="jumbotron-heading text-center">
+                    Agregar Asistencia
+                </h3>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="py-4 d-flex justify-content-center">
+                <form>
+                    <div class="form-group mb-3 text-center">
+                        <label><strong>{{asistencia.mensaje}}</strong></label>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="carnet">Carnet</label>
+                        <input class="form-control item" id="carnet" name="inputCarnet" placeholder="Ingresar carnet" [(ngModel)]="asistencia.carnet">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="nombre">Nombre</label>
+                        <input class="form-control item" id="nombre" name="inputNombre" placeholder="Nombre completo" [(ngModel)]="asistencia.nombre">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="eventoid">Evento Id</label>
+                        <input class="form-control item" id="eventoid" name="inputEventoId" placeholder="12345" [(ngModel)]="asistencia.idEvento">
+                    </div>
+                    <div class="form-group mb-3 ">
+                        <label for="evento">Evento</label>
+                        <input class="form-control item" id="evento" name="inputEvento" placeholder="Nombre evento" [(ngModel)]="asistencia.nombreEvento">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="imagen">Imagen</label>
+                        <input type="file" class="form-control" accept="image/*" (change)="loadImage($event)">
+                        <img [src]="imagen || no_disponible" class="card-img-top" alt="..." style="max-width: 350px;" height="250">
+                    </div>
+                    <div class="form-group mb-3">
+                        <button type="button" id="boton" class="btn btn-secondary" (click)="enviarAsistencia()">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>

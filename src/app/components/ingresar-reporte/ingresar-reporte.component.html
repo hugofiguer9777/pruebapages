@@ -1,0 +1,38 @@
+<div class="bg-light">
+    <app-menubar></app-menubar>
+    <main>
+        <section class="jumbotron text-center my-2">
+            <div class="container">
+                <h1 class="jumbotron-heading text-center">
+                    Ingreso de reportes de practicantes
+                </h1>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="py-4 d-flex justify-content-center">
+                <form>
+                    <div class="form-group mb-3" id="cont1">
+                        <label for="carnet">Carnet</label>
+                        <input class="form-control item" id="carnet" name="inputCarnet" placeholder="Ingresar carnet" [(ngModel)]="carnet">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="nombre">Nombre</label>
+                        <input class="form-control item" id="nombre" name="inputNombre" placeholder="Nombre completo" [(ngModel)]="nombre">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="proyecto">Tema</label>
+                        <input class="form-control item" id="proyecto" name="inputProyecto" placeholder="Nombre del curso o proyecto" [(ngModel)]="tema">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="cuerpo">Cuerpo del reporte</label>
+                        <textarea rows="10" class="form-control item" id="cuerpo" name="inputCuerpo" placeholder="Escriba el cuerpo del reporte..." [(ngModel)]="cuerpoReporte"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <button type="button" id="boton" class="btn btn-secondary" (click)="enviarReporte()">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>

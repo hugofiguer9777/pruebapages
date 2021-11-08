@@ -1,0 +1,57 @@
+<div class="bg-light">
+    <app-menubar></app-menubar>
+    <main>
+        <section class="jumbotron text-center my-4">
+            <div class="container">
+                <h1 class="jumbotron-heading text-center">
+                    Reporte individual de Practicante
+                </h1>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="py-5 d-flex justify-content-center">
+                <div>
+                    <div class="form-group mb-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">Carnet</span>
+                            </div>
+                            <input type="text" class="form-control" id="carnet" aria-describedby="basic-addon3" placeholder="Ingresar carnet" [(ngModel)]="carnet">
+                            <button type="button" class="me-2 btn btn-outline-success" (click)="buscarCarnet()">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive my-5">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Carnet</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tema</th>
+                            <th scope="col">Reporte</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Servidor</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let reporte of reportes; let i = index">
+                            <td>{{reporte.carnet}}</td>
+                            <td>{{reporte.nombre}}</td>
+                            <td>{{reporte.tema}}</td>
+                            <td>{{reporte.reporte}}</td>
+                            <td>{{reporte.fecha | date :'dd-MM-yyyy'}}</td>
+                            <td>{{reporte.servidor}}</td>
+                            <td><button type="button" class="btn btn-outline-primary btn-block" (click)="verReporte(i)">Ver</button></td>
+                            <!-- <td><button type="button" class="btn btn-outline-danger btn-block" (click)="delReporte(i)">Eliminar</button></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
